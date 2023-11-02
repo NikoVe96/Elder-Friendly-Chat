@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './images/logo.jpg';
+import './Styles.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div class="container">
+        <div class="centered-content">
+          <image class="logoImage" src="/src/images/logo.jpg" alt="Logo"></image>
+          <h1> Elder Friendly Chat</h1>
+
+          <div class="centered-buttons">
+            <img class="img" src="/src/images/conversations1.png" alt="conversations"></img>
+            <a href="ConversationsList.html"><button class="button"> View conversations</button></a>
+          </div>
+
+          <div class="centered-buttons">
+            <img class="img" src="/src/images/add_contact.png" alt="conversations"></img>
+            <button class="button">Add new contact</button>
+          </div>
+        </div>
+
+        <div>
+          <button class="settingsButton">Settings</button>
+        </div>
+
+        <div>
+          <a href="MainMenu.html" class="home-button">Home</a>
+        </div>
+      </div>
+    </>
   );
 }
 
