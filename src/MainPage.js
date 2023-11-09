@@ -7,16 +7,16 @@ function MainPage() {
         <>
             <div className="container">
                 <div className="centered-content">
-                    <image className="logoImage" src="/src/images/logo.jpg" alt="Logo"></image>
+                    <img className="logoImage" src={require('./images/logo.jpg')} alt="logo" />
                     <h1> Elder Friendly Chat</h1>
 
                     <div className="centered-buttons">
-                        <img className="img" src="/src/images/conversations1.png" alt="conversations"></img>
+                        <img className="img" src={require('./images/conversations1.png')} alt="conversations"></img>
                         <Link to="/conversations"><button class="button"> View conversations</button></Link>
                     </div>
 
                     <div className="centered-buttons">
-                        <img className="img" src="/src/images/add_contact.png" alt="conversations"></img>
+                        <img className="img" src={require('./images/add_contact.png')} alt="conversations"></img>
                         <button className="button">Add new contact</button>
                     </div>
                 </div>
