@@ -1,34 +1,21 @@
-import logo from './images/logo.jpg';
-import './Styles.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MainPage from './MainPage';
+import Conversations from './Conversations';
+import { render } from '@testing-library/react';
 
 function App() {
   return (
     <>
-      <div class="container">
-        <div class="centered-content">
-          <image class="logoImage" src="/src/images/logo.jpg" alt="Logo"></image>
-          <h1> Elder Friendly Chat</h1>
-
-          <div class="centered-buttons">
-            <img class="img" src="/src/images/conversations1.png" alt="conversations"></img>
-            <a href="ConversationsList.html"><button class="button"> View conversations</button></a>
-          </div>
-
-          <div class="centered-buttons">
-            <img class="img" src="/src/images/add_contact.png" alt="conversations"></img>
-            <button class="button">Add new contact</button>
-          </div>
-        </div>
-
-        <div>
-          <button class="settingsButton">Settings</button>
-        </div>
-
-        <div>
-          <a href="MainMenu.html" class="home-button">Home</a>
-        </div>
-      </div>
+      <MainPage />
     </>
+    /*
+     <Router>
+      <Routes>
+        <Route path="/" exact component={MainPage} />
+        <Route path="/conversations" component={Conversations} />
+      </Routes>
+    </Router> */
   );
 }
 
