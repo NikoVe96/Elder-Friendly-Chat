@@ -21,7 +21,10 @@ export const ResetPassword = () => {
             <br></br>
             <div className="container">
                 <div className="centered-content">
-                    <img className="logoImage" src="images/logo.jpg" alt="logo" />
+                    <img
+                        className="logoImage"
+                        src="images/logo.jpg"
+                        alt="logo" />
                     <h1> Elder Friendly Chat</h1>
                 </div>
                 <div className="border"></div>

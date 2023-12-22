@@ -2,8 +2,10 @@ import './Styles.css';
 import { Link } from 'react-router-dom';
 import Parse from 'parse/dist/parse.min.js';
 import React, { useState, useEffect } from 'react';
+import { TbArrowBackUp } from "react-icons/tb";
+import { FaRegQuestionCircle } from "react-icons/fa";
 
-function Conversations2() {
+function Conversations() {
     const [currentUser, setCurrentUser] = useState(null);
     const [queryResults, setQueryResults] = useState();
 
@@ -54,6 +56,10 @@ function Conversations2() {
         localStorage.setItem('contactName', name);
     }
 
+    function backButton() {
+        window.location.href = "/home";
+    }
+
     return (
         <>
 
@@ -61,12 +67,28 @@ function Conversations2() {
             <div className="container">
                 <div className="centered-content">
                     <div>
-                        <h1>{currentUser === null && (
-                            ""
-                        )}
-                            {currentUser !== null && (
-                                `${currentUser.get('username')}`
-                            )}'s Conversations</h1>
+                        <table>
+                            <tr>
+                                <td
+                                    width="20px"
+                                    onClick={backButton}>
+                                    <button className="back-button"> < TbArrowBackUp /></button>
+                                </td>
+                                <td width="600px"> <h1>
+                                    {currentUser === null && (
+                                        ""
+                                    )}
+                                    {currentUser !== null && (
+                                        `${currentUser.get('username')}`
+                                    )}'s Conversations
+                                </h1></td>
+                                <td width="20px">
+                                    <Link to="/conversations-ug">
+                                        <button className="guide-button"><FaRegQuestionCircle /></button>
+                                    </Link>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <div className='border'></div>
                     <div className="scrollbar">
@@ -78,7 +100,7 @@ function Conversations2() {
                                         className="centered-content-conversations"
                                         onClick={() => passContact(queryResult.get('name'))}
                                     >
-                                        <Link to="/chat3">
+                                        <Link to="/chat">
                                             <figure>
                                                 <img
                                                     src={
@@ -98,15 +120,11 @@ function Conversations2() {
                                         </Link>
                                         <div className='border-small'></div>
                                     </div>
-
                                 ))
                             : <p>You haven't added any contacts yet!</p>
                         }
                     </div>
                     <div className="border">
-                    </div>
-                    <div>
-                        <button className="new-conversation-button">New conversation</button>
                     </div>
                     <div>
                         <Link to="/home">
@@ -120,4 +138,4 @@ function Conversations2() {
     );
 }
 
-export default Conversations2;
+export default Conversations;

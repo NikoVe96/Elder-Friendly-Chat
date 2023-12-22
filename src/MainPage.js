@@ -1,4 +1,3 @@
-import './Styles.css';
 import { Link } from 'react-router-dom';
 import Parse from 'parse/dist/parse.min.js';
 import React, { useState, useEffect } from 'react';
@@ -53,7 +52,7 @@ function MainPage() {
                     <br></br>
                     <div className="centered-buttons">
                         <BiConversation className="icons" />
-                        <Link to="/convo2"><button class="button"> View conversations</button></Link>
+                        <Link to="/conversations"><button class="button"> View conversations</button></Link>
                     </div>
                     <div className="centered-buttons">
                         <GoPersonAdd className="icons" />
@@ -62,7 +61,7 @@ function MainPage() {
                 </div>
                 <div>
                     <Link to="/settings">
-                        <button className="settings-button"><IoSettingsOutline /> Settings</button>
+                        <button className="settings-button"><IoSettingsOutline />Settings</button>
                     </Link>
                 </div>
             </div>

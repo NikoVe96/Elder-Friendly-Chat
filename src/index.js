@@ -12,8 +12,14 @@ import MainPage from './MainPage';
 import CreatedUser from './CreatedUser';
 import ResetPassword from './ResetPassword';
 import Settings from './Settings';
-import Chat3 from './Chat3';
-import Conversations2 from './Conversations2';
+import Chat from './Chat';
+import Conversations from './Conversations';
+import SettingsUG from './User Guides/SettingsUG';
+import ConversationsUG from './User Guides/ConversationsUG';
+import ChatUG from './User Guides/ChatUG';
+import UserInfo from './UserInfo';
+import AddContactUG from './User Guides/AddContactUG';
+import MessageOptionsUG from './User Guides/MessageOptions';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -27,8 +33,14 @@ ReactDOM.render(
       <Route path="/home" element={<MainPage />} />
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/settings" element={<Settings />} />
-      <Route path="/chat3" element={<Chat3 />} />
-      <Route path="/convo2" element={<Conversations2 />} />
+      <Route path="/chat" element={<Chat />} />
+      <Route path="/conversations" element={<Conversations />} />
+      <Route path="/settings-ug" element={<SettingsUG />} />
+      <Route path="/conversations-ug" element={<ConversationsUG />} />
+      <Route path="/chat-ug" element={<ChatUG />} />
+      <Route path="/user-info" element={<UserInfo />} />
+      <Route path="/add-contact-ug" element={<AddContactUG />} />
+      <Route path="/message-options-ug" element={<MessageOptionsUG />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')

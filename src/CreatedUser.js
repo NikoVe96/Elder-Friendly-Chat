@@ -18,10 +18,12 @@ function CreatedUser() {
                 <h2> Congratulations!</h2>
                 <br></br>
                 <h4> You've now signed up and can start using the elder friendly chat</h4>
-                <h4> When you're ready to explore the app, press the home button</h4>
+                <h4> When you're ready to explore the app, press the home button beneath</h4>
             </div>
             <div>
-                <Link to="/home"><button className="home-button"> Home</button></Link>
+                <Link to="/home">
+                    <button className="home-button"> Home</button>
+                </Link>
             </div>
         </div>
     )

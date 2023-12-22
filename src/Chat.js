@@ -2,8 +2,10 @@ import './Styles.css';
 import { Link } from 'react-router-dom';
 import Parse from 'parse/dist/parse.min.js';
 import React, { useState, useEffect } from 'react';
+import { TbArrowBackUp } from "react-icons/tb";
+import { FaRegQuestionCircle } from "react-icons/fa";
 
-function Chat3() {
+function Chat() {
 
     const [currentUser, setCurrentUser] = useState(null);
     const [newMessage, setNewMessage] = useState("");
@@ -80,15 +82,35 @@ function Chat3() {
     }
 
     const formatDateToTime = (date) => {
-        //Add date
+        //Add date - how?
         return `${date.getHours()}:${date.getMinutes()}`;
     };
+
+    function backButton() {
+        window.location.href = "/conversations";
+    }
 
     return (
         <>
             <br></br>
             <div className="container">
-                <h1>Chat with {contactName}</h1>
+                <table>
+                    <tr>
+                        <td
+                            width="20px"
+                            onClick={backButton}>
+                            <button className="back-button"> < TbArrowBackUp /></button>
+                        </td>
+                        <td width="600px">
+                            <h1>Chat with {contactName}</h1>
+                        </td>
+                        <td width="20px">
+                            <Link to="/chat-UG">
+                                <button className="guide-button"><FaRegQuestionCircle /></button>
+                            </Link>
+                        </td>
+                    </tr>
+                </table>
                 <div className='border'></div>
                 <div className="scrollbar-chat">
                     {queryResults && queryResults.length > 0
@@ -117,34 +139,34 @@ function Chat3() {
                     <div className="grid flex-grow h-32  rounded-box">
 
                         <label className="form-control w-full max-w-xs">
-                            <textarea type="text" placeholder="Write a new message..." className="input-chat" onChange={handleMessage} value={newMessage} />
+                            <textarea
+                                type="text"
+                                placeholder="Write a new message..."
+                                className="input-chat"
+                                onChange={handleMessage}
+                                value={newMessage} />
                         </label>
                         <div className="centered-content">
-                            <button className="chat-send-button" onClick={createMessage}>Send message</button>
+                            <button
+                                className="chat-send-button"
+                                onClick={createMessage}>
+                                Send message
+                            </button>
                         </div>
                     </div>
                     <div className="divider lg:divider-horizontal text-xl">OR</div>
                     <div className="grid flex-grow h-32 rounded-box place-items-center">
                         <Link to="/message-options">
-                            <button className="button">
-                                Message options
-                            </button>
+                            <button className="button">Message options</button>
                         </Link>
                     </div>
                 </div>
-                <div className="join">
-                    <Link to="/home">
-                        <button className="home-button">
-                            Home
-                        </button>
-                    </Link>
-                    <Link to='/conversation'>
-
-                    </Link>
-                </div>
+                <Link to="/home">
+                    <button className="home-button">Home</button>
+                </Link>
             </div >
         </>
     )
 }
 
-export default Chat3;
+export default Chat;
